@@ -1,0 +1,27 @@
+name: ogusa-dev
+channels:
+- PSLmodels
+- conda-forge
+dependencies:
+- python
+- ipython
+- setuptools
+- mkl
+- "scipy>=0.18.1"
+- matplotlib
+- "taxcalc>=2.4.2"
+- "dask>=0.20.0"
+- "paramtools>=0.13.0"
+- openpyxl
+- pip
+- pytest
+- pytest-pep8
+- pytest-xdist
+- pycodestyle
+- pylint
+- coverage
+- requests
+- xlwt
+- pip:
+  - cs-kit
+  - xlrd
