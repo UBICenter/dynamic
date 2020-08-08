@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Dask
+*dask-worker-space*
+
+# Micro data for tax policy - too big for GitHub
+micro_data_*.pkl
