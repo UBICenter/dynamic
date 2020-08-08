@@ -40,27 +40,33 @@ def main():
                'sigma': 1.6
                }
 
+    # Create UBI reform
+    IIT_REFORM = {
+        'UBI_u18': {2021: 1000},
+        'UBI_1820': {2021: 1000},
+        'UBI_21': {2021: 1000}
+    }
+
+
     '''
     ------------------------------------------------------------------------
     Run baseline policy first
     ------------------------------------------------------------------------
     '''
-    # tax_func_path = os.path.join(
-    #     CUR_DIR, '..', 'ogusa', 'data', 'tax_functions',
-    #     'TxFuncEst_baseline_CPS.pkl')  # use cached baseline estimates
-    TAX_FUNC_FOLDER = '/home/mghenis/dynamic_micro'
-    baseline_tax_func = os.path.join(TAX_FUNC_FOLDER, 'micro_data_baseline.pkl')
-    ubi_tax_func = os.path.join(TAX_FUNC_FOLDER, 'micro_data_policy.pkl')
+    TAX_FUNC_FOLDER = '/home/mghenis/UBICenter/dynamic/OUTPUT_REFORM'
+    # baseline_tax_func = os.path.join(TAX_FUNC_FOLDER, 'micro_data_baseline.pkl')
+    ubi_tax_func = os.path.join(TAX_FUNC_FOLDER, 'TxFuncEst_policy_example.pkl')
+    # ubi_tax_func = os.path.join(TAX_FUNC_FOLDER, 'micro_data_policy.pkl')
 
 
     kwargs = {'output_base': base_dir, 'baseline_dir': base_dir,
               'test': False, 'time_path': False, 'baseline': True,
               'og_spec': OG_SPEC, 'guid': '_example',
-              'run_micro': False, 'tax_func_path': baseline_tax_func,
+              #'run_micro': False, 'tax_func_path': baseline_tax_func,
               'data': 'cps', 'client': client, 'num_workers': num_workers}
 
     start_time = time.time()
-    # runner(**kwargs)
+    runner(**kwargs)
     print('run time = ', time.time()-start_time)
 
     '''
@@ -71,6 +77,8 @@ def main():
     kwargs = {'output_base': reform_dir, 'baseline_dir': base_dir,
               'test': False, 'time_path': False, 'baseline': False,
               'og_spec': OG_SPEC, 'guid': '_example',
+              # Error occurs with and without below line:
+              # 'iit_reform': IIT_REFORM,
               'run_micro': False, 'tax_func_path': ubi_tax_func,
               'data': 'cps', 'client': client, 'num_workers': num_workers}
 
