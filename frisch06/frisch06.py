@@ -36,7 +36,7 @@ def main():
                'zeta_K': [1],
                'initial_foreign_debt_ratio': 0,
                # Manipulated factor.
-               'frisch': 0.1
+               'frisch': 0.6
                }
 
     # Create UBI reform
@@ -60,7 +60,7 @@ def main():
 
     kwargs = {'output_base': base_dir, 'baseline_dir': base_dir,
               'test': False, 'time_path': False, 'baseline': True,
-              'og_spec': OG_SPEC, 'guid': '_frisch01',
+              'og_spec': OG_SPEC, 'guid': '_frisch06',
               #'run_micro': False, 'tax_func_path': baseline_tax_func,
               'data': 'cps', 'client': client, 'num_workers': num_workers}
 
@@ -75,7 +75,7 @@ def main():
     '''
     kwargs = {'output_base': reform_dir, 'baseline_dir': base_dir,
               'test': False, 'time_path': False, 'baseline': False,
-              'og_spec': OG_SPEC, 'guid': '_frisch01',
+              'og_spec': OG_SPEC, 'guid': '_frisch06',
               # Error occurs with and without below line:
               # 'iit_reform': IIT_REFORM,
               'run_micro': False, 'tax_func_path': ubi_tax_func,
