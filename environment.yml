@@ -1,0 +1,32 @@
+name: ubi-ogusa
+channels:
+- PSLmodels
+- conda-forge
+dependencies:
+- python
+- ipython
+- jupyter
+- setuptools
+- mkl
+- "scipy>=0.18.1"
+- matplotlib
+- "taxcalc>=2.4.2"
+- "dask>=0.20.0"
+- "paramtools>=0.13.0"
+- openpyxl
+- pip
+- pytest
+- pytest-pep8
+- pytest-xdist
+- pycodestyle
+- pylint
+- coverage
+- requests
+- xlwt
+- plotly
+- pip:
+  - cs-kit
+  - xlrd
+  - "git+https://github.com/PSLmodels/OG-USA.git"  # ogusa is old on conda
+  - "git+https://github.com/MaxGhenis/microdf.git"
+  - jupyter-book
